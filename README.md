@@ -7,3 +7,6 @@ Contains Console applications:
 
 Added branch Develop.
 Switched to main branch.
+
+Updated with git bash.
+

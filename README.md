@@ -5,4 +5,5 @@ Repository used to upload my solutions for Problems in the Softuni Programing Fu
 Contains Console applications:
 - ArrayManipulator;
 
+Added branch Develop.
 Switched to main branch.

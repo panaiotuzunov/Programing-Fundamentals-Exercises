@@ -8,3 +8,5 @@ Repository used to upload solutions for Problems in the Softuni Programing Funda
 26.01.17 - Added DataTypesAndVariables-Lab.<br />
 26.01.17 - Added Arrays-Exercises.<br />
 26.01.17 - Added Arrays-Lab.<br />
+26.01.17 - Added Lists-Lab.<br />
+26.01.17 - Added Lists-Exercises.<br />

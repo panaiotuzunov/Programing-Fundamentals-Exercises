@@ -4,37 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02.OddOccurences
+namespace _03.SumMinMaxAverage
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string[] input = Console.ReadLine().ToLower().Split();
-            Dictionary<string, int> words = new Dictionary<string, int>();
-            List<string> result = new List<string>();
+            int numsCount = int.Parse(Console.ReadLine());
+            int[] nums = new int[numsCount];
 
-            foreach (var word in input)
+            for (int i = 0; i < numsCount; i++)
             {
-                if (words.ContainsKey(word))
-                {
-                    words[word]++;
-                }
-                else
-                {
-                    words[word] = 1;
-                }
+                nums[i] = int.Parse(Console.ReadLine());
             }
 
-            foreach (var pair in words)
-            {
-                if (pair.Value % 2 != 0)
-                {
-                    result.Add(pair.Key);
-                }
-            }
-
-            Console.WriteLine(string.Join(", ", result));
+            Console.WriteLine("Sum = {0}",nums.Sum());
+            Console.WriteLine("Min = {0}", nums.Min());
+            Console.WriteLine("Max = {0}", nums.Max());
+            Console.WriteLine("Average = {0}", nums.Average());
         }
     }
 }

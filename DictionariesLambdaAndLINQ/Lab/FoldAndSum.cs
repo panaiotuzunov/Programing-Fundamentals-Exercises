@@ -4,37 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02.OddOccurences
+namespace _06.FoldAndSum
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string[] input = Console.ReadLine().ToLower().Split();
-            Dictionary<string, int> words = new Dictionary<string, int>();
-            List<string> result = new List<string>();
+            int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int k = numbers.Length / 4;
 
-            foreach (var word in input)
-            {
-                if (words.ContainsKey(word))
-                {
-                    words[word]++;
-                }
-                else
-                {
-                    words[word] = 1;
-                }
-            }
+            int[] lower = numbers.Skip(k).Take(2 * k).ToArray();
+            int[] upper = numbers.Take(k).Reverse().ToArray().Concat(numbers.Reverse().Take(k).ToArray()).ToArray();
 
-            foreach (var pair in words)
-            {
-                if (pair.Value % 2 != 0)
-                {
-                    result.Add(pair.Key);
-                }
-            }
-
-            Console.WriteLine(string.Join(", ", result));
+            Console.WriteLine(string.Join(" ", lower.Select((x, index) => x + upper[index])));
         }
     }
 }

@@ -4,37 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02.OddOccurences
+namespace _05.ShortWordsSorted
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string[] input = Console.ReadLine().ToLower().Split();
-            Dictionary<string, int> words = new Dictionary<string, int>();
-            List<string> result = new List<string>();
+            char[] separators = { '.', ',', ':', ';', '(', ')', '[', ']', '"', '\'', '\\', '/', '!', '?', ' ' };
+            string text = Console.ReadLine().ToLower();
 
-            foreach (var word in input)
-            {
-                if (words.ContainsKey(word))
-                {
-                    words[word]++;
-                }
-                else
-                {
-                    words[word] = 1;
-                }
-            }
-
-            foreach (var pair in words)
-            {
-                if (pair.Value % 2 != 0)
-                {
-                    result.Add(pair.Key);
-                }
-            }
-
-            Console.WriteLine(string.Join(", ", result));
+            Console.WriteLine(string.Join(", ", text.Split(separators, StringSplitOptions.RemoveEmptyEntries)
+                .Where(word => word.Length < 5).OrderBy(word => word).Distinct()));
         }
     }
 }

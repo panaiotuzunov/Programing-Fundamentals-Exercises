@@ -14,12 +14,12 @@ namespace ArraysExercises
 
             int startPosition = 0;
             int lenght = 1;
-            int bestLenght = 1;
-            int bestStart = 0;
+            int bestLenght = int.MinValue;
+            int bestStart = int.MinValue;
 
             for (int element = 1; element < numbers.Length; element++)
             {
-                if (numbers[element] == numbers[element - 1])
+                if (numbers[element] - numbers[element - 1] >= 1)
                 {
                     lenght++;
                     if (lenght > bestLenght)

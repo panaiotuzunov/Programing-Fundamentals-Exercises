@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04.Elevator
+namespace _05.CompareCharArrays
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int people = int.Parse(Console.ReadLine());
-            int capacity = int.Parse(Console.ReadLine());
+            char[] arr1 = Console.ReadLine().Split().Select(char.Parse).ToArray();
+            char[] arr2 = Console.ReadLine().Split().Select(char.Parse).ToArray();
 
-            int courses = (int)Math.Ceiling((double)people / capacity);
-            Console.WriteLine(courses);
+            string[] result = { new string(arr1), new string(arr2) };
+
+            Console.WriteLine(string.Join("\n", result.OrderBy(x => x)));
         }
     }
 }

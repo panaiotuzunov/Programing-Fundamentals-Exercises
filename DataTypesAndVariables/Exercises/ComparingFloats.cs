@@ -4,20 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.CenturiesToMinutes
+namespace _15.ComparingFloatNumbers
 {
     class Program
     {
         static void Main(string[] args)
         {
-            byte inputCenturies = byte.Parse(Console.ReadLine());
-            short years = (short)(inputCenturies * 100);
-            int days = (int)(365.2422 * years);
-            int hours = days * 24;
-            int minutes = hours * 60;
+            double num1 = double.Parse(Console.ReadLine());
+            double num2 = double.Parse(Console.ReadLine());
+            double eps = 0.000001f;
 
-            Console.WriteLine("{0} centuries = {1} years = {2} days = {3} hours = {4} minutes",
-                inputCenturies, years, days, hours, minutes);
+            double diff = Math.Abs(num1 - num2);
+
+            if (diff < eps)
+            {
+                bool isEqual = true;
+                Console.WriteLine(isEqual);
+            }
+            else
+            {
+                bool isEqual = false;
+                Console.WriteLine(isEqual);
+            }
         }
     }
 }

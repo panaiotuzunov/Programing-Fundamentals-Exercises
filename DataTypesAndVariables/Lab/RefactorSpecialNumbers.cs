@@ -4,23 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03.ExactSumOfRealNumbers
+namespace _09.RefactorSpecialNumbers
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int numbersCount = int.Parse(Console.ReadLine());
-            decimal sum = 0;
+            int endNumber = int.Parse(Console.ReadLine());
+            int sum = 0;
+            bool isNumberSpecial = false;
 
-            for (int i = 0; i < numbersCount; i++)
+            for (int curentNumber = 1; curentNumber <= endNumber; curentNumber++)
             {
-                decimal curentNumber = decimal.Parse(Console.ReadLine());
+                int curentNumberBackup = curentNumber;
 
-                sum += curentNumber; 
+                while (curentNumberBackup > 0)
+                {
+                    sum += curentNumberBackup % 10;
+                    curentNumberBackup = curentNumberBackup / 10;
+                }
+
+                isNumberSpecial = (sum == 5) || (sum == 7) || (sum == 11);
+                Console.WriteLine($"{curentNumber} -> {isNumberSpecial}");
+                sum = 0;
             }
-
-            Console.WriteLine(sum);
         }
     }
 }

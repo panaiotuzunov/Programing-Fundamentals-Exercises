@@ -4,20 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.CenturiesToMinutes
+namespace _19.TheaThePhotographer
 {
     class Program
     {
         static void Main(string[] args)
         {
-            byte inputCenturies = byte.Parse(Console.ReadLine());
-            short years = (short)(inputCenturies * 100);
-            int days = (int)(365.2422 * years);
-            int hours = days * 24;
-            int minutes = hours * 60;
+            long ammountOfPictures = int.Parse(Console.ReadLine());
+            long timeForFiltering = int.Parse(Console.ReadLine());
+            long percentageOfGoodPictures = int.Parse(Console.ReadLine());
+            long timeForUploading = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("{0} centuries = {1} years = {2} days = {3} hours = {4} minutes",
-                inputCenturies, years, days, hours, minutes);
+            long filteredPictures = (long)Math.Ceiling((double)ammountOfPictures * (percentageOfGoodPictures / 100d));
+            long totalTimeInSeconds = (ammountOfPictures * timeForFiltering) + (filteredPictures * timeForUploading);
+
+            long days = totalTimeInSeconds / 86400;
+            long hours = (totalTimeInSeconds % 86400) / 3600;
+            long minutes = (totalTimeInSeconds % 3600) / 60;
+            long seconds = (totalTimeInSeconds % 3600) % 60;
+
+            Console.WriteLine(
+                "{0}:{1}:{2}:{3}", days, hours.ToString().PadLeft(2, '0')
+                , minutes.ToString().PadLeft(2, '0')
+                , seconds.ToString().PadLeft(2, '0')
+                );
         }
     }
 }

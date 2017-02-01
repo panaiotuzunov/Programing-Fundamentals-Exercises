@@ -4,20 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.CenturiesToMinutes
+namespace _02.PracticeFloatingPointNumbers
 {
     class Program
     {
         static void Main(string[] args)
         {
-            byte inputCenturies = byte.Parse(Console.ReadLine());
-            short years = (short)(inputCenturies * 100);
-            int days = (int)(365.2422 * years);
-            int hours = days * 24;
-            int minutes = hours * 60;
+            decimal num1 = 3.141592653589793238m;
+            double num2 = 1.60217657;
+            decimal num3 = 7.8184261974584555216535342341m;
 
-            Console.WriteLine("{0} centuries = {1} years = {2} days = {3} hours = {4} minutes",
-                inputCenturies, years, days, hours, minutes);
+            Console.WriteLine(num1);
+            Console.WriteLine("{0:F8}", num2);
+            Console.WriteLine(num3);
         }
     }
 }

@@ -4,20 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.CenturiesToMinutes
+namespace _13.VowelOrDigit
 {
     class Program
     {
         static void Main(string[] args)
         {
-            byte inputCenturies = byte.Parse(Console.ReadLine());
-            short years = (short)(inputCenturies * 100);
-            int days = (int)(365.2422 * years);
-            int hours = days * 24;
-            int minutes = hours * 60;
+            char symbol = char.Parse(Console.ReadLine());
+            bool isVowel = symbol == 65 || symbol == 69 || symbol == 73 ||
+                symbol == 79 || symbol == 85 || symbol == 89 ||
+                symbol == 97 || symbol == 101 || symbol == 105 ||
+                symbol == 111 || symbol == 117 || symbol == 121;
 
-            Console.WriteLine("{0} centuries = {1} years = {2} days = {3} hours = {4} minutes",
-                inputCenturies, years, days, hours, minutes);
+            bool isDigil = symbol >= 48 && symbol <= 57;
+
+            if (isVowel)
+            {
+                Console.WriteLine("vowel");
+            }
+            else if (isDigil)
+            {
+                Console.WriteLine("digit");
+            }
+            else
+            {
+                Console.WriteLine("other");
+            }
         }
     }
 }

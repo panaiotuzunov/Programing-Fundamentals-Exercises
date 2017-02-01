@@ -4,17 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04.Elevator
+namespace _09.IndexOfLetters
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int people = int.Parse(Console.ReadLine());
-            int capacity = int.Parse(Console.ReadLine());
+            char[] letters = new char[(122 - 97) + 1];
 
-            int courses = (int)Math.Ceiling((double)people / capacity);
-            Console.WriteLine(courses);
+            for (int i = 0, j = 97; i < letters.Length; i++, j++)
+            {
+                letters[i] = (char)j;
+            }
+
+            string word = Console.ReadLine();
+
+            foreach (var letter in word)
+            {
+                for (int i = 0; i < letters.Length; i++)
+                {
+                    if (letter == letters[i])
+                    {
+                        Console.WriteLine("{0} -> {1}", letter, i);
+                    }
+                }
+            }
         }
     }
 }

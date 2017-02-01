@@ -4,17 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04.Elevator
+namespace _02.ReverseArrayOfIntegers
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int people = int.Parse(Console.ReadLine());
-            int capacity = int.Parse(Console.ReadLine());
+            int numberOfElements = int.Parse(Console.ReadLine());
+            int[] integers = new int[numberOfElements];
 
-            int courses = (int)Math.Ceiling((double)people / capacity);
-            Console.WriteLine(courses);
+            for (int element = 0; element < numberOfElements; element++)
+            {
+                integers[element] = int.Parse(Console.ReadLine());
+            }
+
+            integers = integers.Reverse().ToArray();
+
+            Console.WriteLine(string.Join(" ", integers));
         }
     }
 }

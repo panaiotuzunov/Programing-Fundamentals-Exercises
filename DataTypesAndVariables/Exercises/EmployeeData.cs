@@ -4,20 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.CenturiesToMinutes
+namespace _08.EmployeeData
 {
     class Program
     {
         static void Main(string[] args)
         {
-            byte inputCenturies = byte.Parse(Console.ReadLine());
-            short years = (short)(inputCenturies * 100);
-            int days = (int)(365.2422 * years);
-            int hours = days * 24;
-            int minutes = hours * 60;
+            string firstName = "Amanda";
+            string lastName = "Jonson";
+            int age = 27;
+            char gender = 'f';
+            string id = "8306112507";
+            string uniqueNumber = "27563571";
 
-            Console.WriteLine("{0} centuries = {1} years = {2} days = {3} hours = {4} minutes",
-                inputCenturies, years, days, hours, minutes);
+            Console.WriteLine("First name: {0}", firstName);
+            Console.WriteLine("Last name: {0}", lastName);
+            Console.WriteLine("Age: {0}", age);
+            Console.WriteLine("Gender: {0}", gender);
+            Console.WriteLine("Personal ID: {0}", id);
+            Console.WriteLine("Unique Employee number: {0}", uniqueNumber);
         }
     }
 }

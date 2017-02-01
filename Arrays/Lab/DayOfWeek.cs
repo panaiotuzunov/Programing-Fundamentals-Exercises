@@ -4,17 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04.Elevator
+namespace _01.DayOfWeek
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int people = int.Parse(Console.ReadLine());
-            int capacity = int.Parse(Console.ReadLine());
+            string[] daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 
-            int courses = (int)Math.Ceiling((double)people / capacity);
-            Console.WriteLine(courses);
+            int element = int.Parse(Console.ReadLine());
+            bool isInRange = (element - 1) >= 0 && (element - 1) <= (daysOfWeek.Length - 1);
+
+            if (isInRange)
+            {
+                Console.WriteLine(daysOfWeek[element - 1]);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Day!");
+            }
         }
     }
 }

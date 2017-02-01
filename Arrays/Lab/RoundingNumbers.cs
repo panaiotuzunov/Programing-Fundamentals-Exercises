@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04.Elevator
+namespace _06.RoundingNumbersAwayFromZero
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int people = int.Parse(Console.ReadLine());
-            int capacity = int.Parse(Console.ReadLine());
+            double[] numbers = Console.ReadLine().Split().Select(double.Parse).ToArray();
 
-            int courses = (int)Math.Ceiling((double)people / capacity);
-            Console.WriteLine(courses);
+            for (int curentNumber = 0; curentNumber < numbers.Length; curentNumber++)
+            {
+                Console.WriteLine("{0} => {1}", numbers[curentNumber]
+                    , Math.Round(numbers[curentNumber], MidpointRounding.AwayFromZero));
+            }
         }
     }
 }

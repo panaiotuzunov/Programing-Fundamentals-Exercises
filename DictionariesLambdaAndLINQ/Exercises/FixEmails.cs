@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +16,11 @@ namespace _04.FixEmails
             while (!input.Equals("stop"))
             {
                 string email = Console.ReadLine();
-                emails[input] = email;
+                string domain = email.Substring(email.Length - 2);
+                bool isValidDomain = !domain.Equals("uk") && !domain.Equals("us");
+
+                if (isValidDomain)
+                    emails[input] = email;
 
                 input = Console.ReadLine();
             }

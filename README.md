@@ -11,3 +11,4 @@ Repository used to upload solutions for Problems in the Softuni Programing Funda
 26.01.17 - Added Lists-Lab.<br />
 26.01.17 - Added Lists-Exercises.<br />
 01.02.17 - Added DictionariesLambdaAndLINQ-Lab.<br />
+02.02.17 - Added DictionariesLambdaAndLINQ-Exercises.<br />

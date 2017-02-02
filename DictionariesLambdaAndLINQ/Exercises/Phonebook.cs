@@ -34,7 +34,6 @@ namespace _01.Phonebook
             string name = commandArgs[1];
 
             if (phonebook.ContainsKey(name))
-            
                 Console.WriteLine("{0} -> {1}", name, phonebook[name]);
             
             else

@@ -28,7 +28,6 @@ namespace _05.HandsOfCards
 
                 playersCards[player].AddRange(cards);
 
-
                 input = Console.ReadLine();
             }
 
@@ -42,7 +41,6 @@ namespace _05.HandsOfCards
                 List<string> curentPlayerCards = playersCards[player].Distinct().ToList();
                 int score = 0;
 
-
                 for (int i = 0; i < curentPlayerCards.Count; i++)
                 {
                     string card = curentPlayerCards[i];
@@ -54,7 +52,6 @@ namespace _05.HandsOfCards
 
                 Console.WriteLine("{0}: {1}", player, score);
             }
-
         }
 
         private static int GetCardType(string card)
